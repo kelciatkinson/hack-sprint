@@ -8,7 +8,7 @@ $( document ).ready(function() {
   $("a .heart").on('click', like(this));
 });
 
-$.getJSON("characterData.js", function(result){
+$.getJSON("api/characterData.json", function(result){
   characterData = result.characters;
   configurationData = result.configuration;
   shuffle(characterData);
