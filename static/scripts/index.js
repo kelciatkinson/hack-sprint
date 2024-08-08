@@ -1,5 +1,5 @@
-let characterId;
-let characterData;
+let characterId = -1;
+let characterData = [];
 let configurationData;
 
 $( document ).ready(function() {
