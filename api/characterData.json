@@ -81,5 +81,7 @@
       "image": "path/to/image"
     }
   ],
-  "configuration": "nothing"
+  "configuration": {
+    "characterImages": "static/images/"
+  }
 }
