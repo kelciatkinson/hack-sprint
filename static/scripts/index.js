@@ -46,7 +46,9 @@ function like() {
   // determine if the user has matched with a 40% chance of matching
   if (Math.random() < 0.4) {
     console.log("it's a match!");
-    $("modal").modal('show');
+    // make the jquery modal appear on the screen.
+
+    $(".modal").jqm('open');
   }
   characterId++;
   if (characterId==characterData.length) {
