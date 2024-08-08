@@ -97,7 +97,7 @@ section p {
     background-color: #fff;
     border-radius: 10px;
     width: 90%;
-    max-width: 400px;
+    max-width: 33rem;
     padding: 10px;
     box-sizing: border-box;
     margin: 250px auto;
@@ -142,6 +142,11 @@ section p {
     margin-top: 10px;
 }
 
+.stats {
+    display: flex;
+    justify-content: space-around;
+}
+
 #characterName {
     margin: 10px 0 5px;
     text-align: center;
@@ -152,7 +157,7 @@ section p {
 #characterBio {
     color: #555;
     margin-top: auto;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 10px;
 }
 
 #characterAge {
