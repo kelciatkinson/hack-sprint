@@ -21,8 +21,8 @@ $.getJSON("api/characterData.json", function(result){
 function updatePage(character) {
   $("#characterName").text(character.name);
   $("#characterImage").attr("src", character.image);
-  $("#characterAge").text("Age " + character.age);
-  $("#characterHeight").text(character.height);
+  $("#characterAge").text("Age: " + character.age);
+  $("#characterHeight").text("Height: " + character.height);
   $("#characterBio").text(character.bio);
 }
 
