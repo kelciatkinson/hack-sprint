@@ -43,6 +43,11 @@ function like() {
     return;
 
   console.log("liked " + characterId);
+  // determine if the user has matched with a 40% chance of matching
+  if (Math.random() < 0.4) {
+    console.log("it's a match!");
+    $("modal").modal('show');
+  }
   characterId++;
   if (characterId==characterData.length) {
     characterId = 1;
