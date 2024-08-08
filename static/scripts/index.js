@@ -48,7 +48,7 @@ function like() {
     console.log("it's a match!");
     // make the jquery modal appear on the screen.
 
-    $(".modal").jqm('open');
+    $("#myModal").jqm('open');
   }
   characterId++;
   if (characterId==characterData.length) {
