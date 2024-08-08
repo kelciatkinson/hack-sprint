@@ -4,8 +4,8 @@ let configurationData;
 
 $( document ).ready(function() {
   console.log( "ready!" );
-  $("a .cross").on('click', dislike());
-  $("a .heart").on('click', like());
+  $("#dislike").on('click', dislike());
+  $("#like").on('click', like());
 });
 
 $.getJSON("api/characterData.json", function(result){
