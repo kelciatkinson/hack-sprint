@@ -4,8 +4,8 @@ let configurationData;
 
 $( document ).ready(function() {
   console.log( "ready!" );
-  $("a .cross").on('click', dislike(this));
-  $("a .heart").on('click', like(this));
+  $("a .cross").on('click', dislike());
+  $("a .heart").on('click', like());
 });
 
 $.getJSON("api/characterData.json", function(result){
@@ -26,7 +26,7 @@ function updatePage(character) {
   $("#characterBio").text(character.bio);
 }
 
-function dislike(o) {
+function dislike() {
   console.log("disliked " + characterId);
   characterId++;
   if (characterId==characterData.length) {
@@ -35,7 +35,7 @@ function dislike(o) {
   updatePage(characterData[characterId]);
 }
 
-function like(o) {
+function like() {
   console.log("liked " + characterId);
   characterId++;
   if (characterId==characterData.length) {
