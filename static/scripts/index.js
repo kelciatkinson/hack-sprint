@@ -4,8 +4,8 @@ let configurationData;
 
 $( document ).ready(function() {
   console.log( "ready!" );
-  $("#dislike").on('click', dislike());
-  $("#like").on('click', like());
+  $("#dislike").on('click', dislike);
+  $("#like").on('click', like);
 });
 
 $.getJSON("api/characterData.json", function(result){
@@ -21,7 +21,7 @@ $.getJSON("api/characterData.json", function(result){
 function updatePage(character) {
   $("#characterName").text(character.name);
   $("#characterImage").attr("src", character.image);
-  $("#characterAge").text(character.age);
+  $("#characterAge").text("Age " + character.age);
   $("#characterHeight").text(character.height);
   $("#characterBio").text(character.bio);
 }
