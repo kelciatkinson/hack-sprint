@@ -1,5 +1,5 @@
 {
-  "characters:" [
+  "characters": [
     {
       "name": "Snow White",
       "age": 87,
@@ -36,5 +36,5 @@
       "image": "path/to/image"
     }
   ],
-  "configuration:" "nothing"
+  "configuration": "nothing"
 }
