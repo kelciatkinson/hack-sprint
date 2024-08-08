@@ -52,7 +52,7 @@ function like() {
     console.log("it's a match!");
     // make the jquery modal appear on the screen.
 
-   // $("#myModal").open();
+    $('#myModal').modal('show');
   }
   characterId++;
   if (characterId==characterData.length) {
