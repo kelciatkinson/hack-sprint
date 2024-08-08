@@ -15,13 +15,16 @@
 <body>
     <header>
         <!-- header contains logo and navigation links -->
-        <div class="logo"></div>
+        <a href="/" class="logo" title="Home"></a>
         <nav class="menu">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><p>Logged in as:</p></li>
+                <li><p id="username"></p></li>
+                <li><img src="static/images/profile-picture.jpg" class="user-picture"></li>
             </ul>
         </nav>
     </header>
@@ -46,16 +49,11 @@
                 <h2 id="characterName">Fairytale Character</h2>
                 <p id="characterBio"></p>
                 <div class="stats">
-                    <p>Age: </p>
                     <p id="characterAge"></p>
-                    <p>Height: </p>
                     <p id="characterHeight"></p>
                 </div>
             </div>
-
-
             <!-- ADD LINK TO CLICK TO LIKE PROFILE-->
-
             <!-- <a id="like" class="heart"> -->
                 <img id="like" class="heart" src="static/images/heart.png">
             <!-- </a> -->
