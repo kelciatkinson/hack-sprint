@@ -19,7 +19,6 @@
 }
 
 main {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,6 +27,7 @@ main {
     background-color: #280a50;
     line-height: 1.6;
     margin: 0;
+    padding-top: 320px;
 }
 
 header {
@@ -39,6 +39,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
@@ -64,25 +67,28 @@ nav ul li a {
 }
 
 section {
-    padding: 40px;
+    min-height: 50vh;
     text-align: center;
     background-color: #280a50;
     color: #fff;
     width: 100%;
     font-family: Kitsch;
-    font-size: 28px;
+    font-size: 4rem;
 }
 
 section p {
     font-family: Beth Ellen;
-    font-size: 18px;
+    font-size: 2rem;
 }
+
 .scroll {
-    margin-top: 40px;
+    margin-top: 80px;
+    font-size: 1rem;
 }
 
 .card {
     display: flex;
+    flex: 1;
     justify-content: center;
     align-items: center;
     background-color: #fff;
@@ -91,7 +97,7 @@ section p {
     max-width: 400px;
     padding: 10px;
     box-sizing: border-box;
-    margin: 20px;
+    margin: 250px auto;
 }
 
 .cross, .heart {
@@ -138,11 +144,10 @@ section p {
 }
 
 footer {
-    display: none;
     margin-top: auto;
     width: 100%;
     background-color: #333;
     color: #fff;
     padding: 20px;
-    text-align: center;
+    text-align: left;
 }
