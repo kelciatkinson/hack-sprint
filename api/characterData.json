@@ -34,7 +34,45 @@
       "height": "2'2",
       "bio": "Alo! My name is Puss, && I have nice boots. They are my biggest point of pride, my most cherished possession. My personality can be best compared to that of my sword, “bright, sharp, and speedy”. In my freetime I enjoy a swift sword fight, a tall glass of milk, or saving yet another kingdom from its own demise. I’m looking for someone as charming and likable as myself, but not too much so. It’s also important to me that my love can keep up with my fast pace in life. Talk soon!",
       "image": "path/to/image"
+    },
+    {
+      "name": "Queen of Hearts",
+      "age": 159,
+      "height": "1'4",
+      "bio": "Ello! I am the Queen of Hearts. I am a bold individual who knows what she wants. I am of high regard, and expect the utmost loyalty. I have a very strict approach to life, and am a firm believer in rules. For example, roses are to be red. If they are any other color, they are to be painted immediately. I love all sorts of games.",
+      "image": "path/to/image"
+    },
+    {
+      "name": "Aladdin",
+      "age": 18,
+      "height": "6'3",
+      "bio": "Hey! My name is Aladdin. I’m looking for an adventurous spirit who isn’t afraid of anything. I have a best friend named Genie, who is always there for me. Traveling by my magic carpet is my preferred way to get around. I’m looking for someone who can see people for who they are and has a knack for helping others.",
+      "image": "path/to/image"
+    },
+    {
+      "name": "Ursula",
+      "age": 55,
+      "height": "5'9",
+      "bio": "I’m Ursula. I’m a woman of my word, and you better be too. Lest there be grave consequences. Hehe. Only joking. I like to make waves, eat sushi, and be the most powerful individual in the room. I am a person who is rather sure of myself, so if you feel like you can handle that, feel free to swim into my dms. I hate family because of my own treating me most poorly. I hope you keep family low on your priority list too. I am assertive and assured, and need someone who is willing to let me be number one.",
+      "image": "path/to/image"
+    },
+    {
+      "name": "Robin Hood",
+      "age": 30,
+      "height": "",
+      "bio": "Hiya! I’m Robin Hood. Out here stealing hearts, one arrow at a time. As the name hints, I dabble with mischief, but in the name of good of course. I’m out to help those who are in need, which sometimes involves taking from those who have too much. If greed is your game, keep on looking. I’m impartial to the needy, and have a lot of heart to give. I like to live dangerously through adventure and by seizing opportunities when they present themselves.",
+      "image": "path/to/image"
+    },
+    {
+      "name": "Captain Hook",
+      "age": 120,
+      "height": "6'",
+      "bio": "Ahoy, potential mateys! I’m Hook, Captain Hook. The name comes from the fact that I have exactly one hand, and one hook. I’m a crusader of the sea, a chaser of gold, and an all around a jolly good time. I enjoy a thrilling hunt for what it is that I desire, which is typically gold, but currently it’s a comrade. A fellow mate to help keep our crew tiptop. My strong dislikes are alligators and children. I despise children. This is a non-negotiable.",
+      "image": "path/to/image"
     }
+    
+    
+
   ],
   "configuration": "nothing"
 }
