@@ -14,6 +14,8 @@ $.getJSON("api/characterData.json", function(result){
   shuffle(characterData);
   // characterData[0] is the user. Start the page with characterData[1]
   console.log("playing as " + characterData[0].name)
+  $("#username").text = characterData[0].name;
+  $('.user-picture').attr('src', 'static/images/' + characterData[0].image);
   characterId = 1;
   updatePage(characterData[characterId]);
 });
