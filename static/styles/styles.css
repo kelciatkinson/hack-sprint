@@ -14,9 +14,11 @@
 @font-face {
     font-family: 'Beth Ellen';
     src: url('../fonts/BethEllen-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
 }
 
-body {
+main {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -29,22 +31,14 @@ body {
 }
 
 header {
-    position: sticky;
-    top: 0;
-    padding-top: 0;
-    z-index: 1000;
     width: 100%;
     color: #000;
     font-family: Kitsch;
-    background-color: #fff;
+    font-size: 20px;
+    background-color: #280a50;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-header p {
-    font-family: Beth Ellen;
-
 }
 
 .logo {
@@ -75,6 +69,16 @@ section {
     background-color: #280a50;
     color: #fff;
     width: 100%;
+    font-family: Kitsch;
+    font-size: 28px;
+}
+
+section p {
+    font-family: Beth Ellen;
+    font-size: 18px;
+}
+.scroll {
+    margin-top: 40px;
 }
 
 .card {
