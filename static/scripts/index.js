@@ -6,6 +6,7 @@ $( document ).ready(function() {
   console.log( "ready!" );
   $("#dislike").on('click', dislike);
   $("#like").on('click', like);
+  $('#myModal').jqm();
 });
 
 $.getJSON("api/characterData.json", function(result){
