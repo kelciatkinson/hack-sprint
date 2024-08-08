@@ -6,7 +6,6 @@ $( document ).ready(function() {
   console.log( "ready!" );
   $("#dislike").on('click', dislike);
   $("#like").on('click', like);
-  $('#myModal').jqm();
 });
 
 $.getJSON("api/characterData.json", function(result){
@@ -49,7 +48,7 @@ function like() {
     console.log("it's a match!");
     // make the jquery modal appear on the screen.
 
-    $("#myModal").jqm('open');
+    $("#myModal").open();
   }
   characterId++;
   if (characterId==characterData.length) {
