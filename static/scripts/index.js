@@ -27,6 +27,9 @@ function updatePage(character) {
 }
 
 function dislike() {
+  if (characterId==-1)
+    return;
+
   console.log("disliked " + characterId);
   characterId++;
   if (characterId==characterData.length) {
@@ -36,6 +39,9 @@ function dislike() {
 }
 
 function like() {
+  if (characterId==-1)
+    return;
+
   console.log("liked " + characterId);
   characterId++;
   if (characterId==characterData.length) {
