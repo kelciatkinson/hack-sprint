@@ -30,7 +30,7 @@ main {
     background: linear-gradient(to bottom, #280a50, #d3adff);
     line-height: 1.6;
     margin: 0;
-    padding-top: 320px;
+    padding-top: 200px;
 }
 
 header {
@@ -70,9 +70,19 @@ nav ul li a {
     text-decoration: none;
 }
 
+nav ul li a:hover {
+    color: #FA5252;
+    text-decoration: none;
+}
+
 nav ul li p {
     color: #fff;
     text-decoration: none;
+}
+
+.loggedin {
+    font-family: Arial;
+    font-size: 1.2rem;
 }
 
 .user-picture {
@@ -81,7 +91,6 @@ nav ul li p {
 }
 
 section {
-    min-height: 50vh;
     text-align: center;
     color: #fff;
     width: 100%;
