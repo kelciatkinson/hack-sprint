@@ -64,7 +64,7 @@ function like() {
       $('#myModal').modal('show');
       var observer = new MutationObserver( () => {
         showNext();
-        this.disconnect();
+        observer.disconnect();
         });
       observer.observe(document.getElementById('myModal'),
         {attributes: true});
