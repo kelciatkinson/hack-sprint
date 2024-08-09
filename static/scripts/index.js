@@ -47,11 +47,7 @@ function dislike() {
   if (characterData[characterId].match)
     console.log("user just missed a match!");
 
-  characterId++;
-  if (characterId==characterData.length)
-    characterId = 1;
-
-  updatePage(characterData[characterId]);
+  showNext();
 }
 
 function like() {
@@ -64,18 +60,20 @@ function like() {
     {
       console.log("it's a match!");
       // make the jquery modal appear on the screen.
+      $('#myModal').on('hidden.bs.modal', () => showNext() );
       $('#myModal').modal('show');
     }
   else
-    {
-      characterId++;
-      if (characterId==characterData.length)
-        characterId = 1;
-
-      updatePage(characterData[characterId]);
-    }
+    showNext();
 }
 
+function showNext() {
+  characterId++;
+  if (characterId==characterData.length)
+    characterId = 1;
+
+  updatePage(characterData[characterId]);
+}
 function shuffle(array) {
   var currentIndex = array.length;
   var temporaryValue;
