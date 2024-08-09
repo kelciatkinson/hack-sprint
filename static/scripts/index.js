@@ -8,19 +8,24 @@ $( document ).ready(function() {
   $("#like").on('click', like);
 });
 
-$.getJSON("api/characterData.json", function(result){
-  characterData = result.characters;
-  // determine matches for this load
-  characterData.forEach(function(character) {
-    character.match = (Math.random() < configurationData.matchOdds);
-  });
+$.getJSON("api/characterData.json", function(result) {
   configurationData = result.configuration;
+  characterData = result.characters;
+
+  // determine user matches based on configurationData.matchOdds
+  characterData[0].match = true;
+  characterData.forEach( character => 
+    character.match = (Math.random() < configurationData.matchOdds)
+  );
+  
   shuffle(characterData);
+
   // characterData[0] is the user. Start the page with characterData[1]
   console.log("playing as " + characterData[0].name)
   let name = `<b>${characterData[0].shortName}</b>`;
   document.getElementById('username').innerHTML = name;
   $('.user-picture').attr('src', `static/images/${characterData[0].image}`);
+
   characterId = 1;
   updatePage(characterData[characterId]);
 });
@@ -39,14 +44,13 @@ function dislike() {
     return;
 
   console.log("disliked " + characterData[characterId].name);
-  if (characterData[characterId].match) {
+  if (characterData[characterId].match)
     console.log("user just missed a match!");
-  }
 
   characterId++;
-  if (characterId==characterData.length) {
+  if (characterId==characterData.length)
     characterId = 1;
-  }
+
   updatePage(characterData[characterId]);
 }
 
@@ -56,17 +60,20 @@ function like() {
 
   console.log("liked " + characterData[characterId].name);
   // determine if the user has matched with a 40% chance of matching
-  if (characterData[characterId].match) {
-    console.log("it's a match!");
-    // make the jquery modal appear on the screen.
-    $('#myModal').modal('show');
-  }
+  if (characterData[characterId].match)
+    {
+      console.log("it's a match!");
+      // make the jquery modal appear on the screen.
+      $('#myModal').modal('show');
+    }
+  else
+    {
+      characterId++;
+      if (characterId==characterData.length)
+        characterId = 1;
 
-  characterId++;
-  if (characterId==characterData.length) {
-    characterId = 1;
-  }
-  updatePage(characterData[characterId]);
+      updatePage(characterData[characterId]);
+    }
 }
 
 function shuffle(array) {
@@ -75,19 +82,17 @@ function shuffle(array) {
   var randomIndex;
 
   // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
+  while (0 !== currentIndex)
+    {
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
 
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
 
   return array;
 }
-
-
