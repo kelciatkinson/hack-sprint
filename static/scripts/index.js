@@ -60,8 +60,14 @@ function like() {
     {
       console.log("it's a match!");
       // make the jquery modal appear on the screen.
-      $('#myModal').on('hidden.bs.modal', () => showNext() );
+      
       $('#myModal').modal('show');
+      var observer = new MutationObserver( () => {
+        showNext();
+        this.disconnect();
+        });
+      observer.observe(document.getElementById('myModal'),
+        {attributes: true});
     }
   else
     showNext();
