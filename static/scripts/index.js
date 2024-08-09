@@ -10,6 +10,10 @@ $( document ).ready(function() {
 
 $.getJSON("api/characterData.json", function(result){
   characterData = result.characters;
+  // determine matches for this load
+  characterData.forEach(function(character) {
+    character.match = (Math.random() < configurationData.matchOdds);
+  });
   configurationData = result.configuration;
   shuffle(characterData);
   // characterData[0] is the user. Start the page with characterData[1]
@@ -34,7 +38,11 @@ function dislike() {
   if (characterId==-1)
     return;
 
-  console.log("disliked " + characterId);
+  console.log("disliked " + characterData[characterId].name);
+  if (characterData[characterId].match) {
+    console.log("user just missed a match!");
+  }
+
   characterId++;
   if (characterId==characterData.length) {
     characterId = 1;
@@ -46,14 +54,14 @@ function like() {
   if (characterId==-1)
     return;
 
-  console.log("liked " + characterId);
+  console.log("liked " + characterData[characterId].name);
   // determine if the user has matched with a 40% chance of matching
-  if (Math.random() < configurationData.matchOdds) {
+  if (characterData[characterId].match) {
     console.log("it's a match!");
     // make the jquery modal appear on the screen.
-
     $('#myModal').modal('show');
   }
+
   characterId++;
   if (characterId==characterData.length) {
     characterId = 1;
