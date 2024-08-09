@@ -1,6 +1,6 @@
 let characterId = -1;
 let characterData = [];
-let configurationData;
+let configurationData = {};
 
 $( document ).ready(function() {
   console.log( "ready!" );
@@ -48,7 +48,7 @@ function like() {
 
   console.log("liked " + characterId);
   // determine if the user has matched with a 40% chance of matching
-  if (Math.random() < 0.4) {
+  if (Math.random() < configurationData.matchOdds) {
     console.log("it's a match!");
     // make the jquery modal appear on the screen.
 

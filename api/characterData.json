@@ -82,6 +82,7 @@
     }
   ],
   "configuration": {
-    "characterImages": "static/images/"
+    "characterImages": "static/images/",
+    "matchOdds": 0.3
   }
 }
