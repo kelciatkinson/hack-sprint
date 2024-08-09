@@ -31,6 +31,7 @@ $.getJSON("api/characterData.json", function(result) {
 });
 
 function updatePage(character) {
+  console.log(`showing character ${character.name}`);
   $("#characterName").text(character.name);
   $("#characterImage img").attr('src',
     configurationData.characterImages + character.image);
