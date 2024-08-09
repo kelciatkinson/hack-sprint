@@ -116,6 +116,7 @@ section p {
     align-items: center;
     background-color: #fff;
     border-radius: 10px;
+    height:720px;
     width: 90%;
     max-width: 33rem;
     padding: 10px;
@@ -132,7 +133,7 @@ section p {
 .cross {
     width: 60px;
     height: 60px;
-    margin-right: 400px;
+    margin-right: 530px;
 }
 
 .cross:hover {
@@ -142,7 +143,7 @@ section p {
 .heart {
     width: 60px;
     height: 60px;
-    margin-left: 400px;
+    margin-left: 530px;
 
 }
 
@@ -186,6 +187,35 @@ section p {
 
 #characterHeight {
     font-family: 'Courier New', Courier, monospace;
+}
+
+.modal {
+    height: 50%;
+    opacity: 90%;
+
+}
+
+.modal p {
+    text-align: center;
+    font-size: 3.5rem;
+    margin: 20px;
+}
+
+.message-box {
+    width: 250px;
+    border: 1px solid #888;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+#textbox {
+    margin-left: 5px;
+}
+
+#submitbutton{
+    margin-left: 50px;
+    background-color: #d3adff;
+    border-radius: 20px;
 }
 
 footer {

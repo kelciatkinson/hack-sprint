@@ -18,10 +18,9 @@
         <a href="/" class="logo" title="Home"></a>
         <nav class="menu">
             <ul>
-                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#messages">Messages</a></li>
+                <li><a href="#matches">Matches</a></li>
                 <li class="loggedin"><p>Logged in as:</p></li>
                 <li class="loggedin"><p id="username"></p></li>
                 <li><img src="static/images/profile-picture.jpg" class="user-picture"></li>
@@ -32,7 +31,7 @@
         <!-- main home page with cards to like or not like -->
         <section>
             <h1>Match Ever After</h1>
-            <p>Your story begins here</p>
+            <p>Your fairytale begins here</p>
             <p class="scroll">Scroll to continue</p>
         </section>
         <div class="card">
@@ -46,7 +45,7 @@
                 <img src="static/images/profile-picture.jpg" class="profile-picture">
             </div>
             <div>
-                <h2 id="characterName">Fairytale Character</h2>
+                <h2 id="characterName"></h2>
                 <p id="characterBio"></p>
                 <div class="stats">
                     <p id="characterAge"></p>
@@ -59,12 +58,19 @@
             <!-- </a> -->
         </div>
         <div id="myModal" class="modal">
-          <p>modal dialog</p>
+            <p>You're a match!</p>
+            <div class="message-box">
+                <input type="text" id="textbox" placeholder="Write them a message">
+                <button type="submit" id="submitbutton">-></button>
+            </div>
         </div>
     </main>
     <footer>
         <!-- footer -->
         <p>&copy; 2024 Match Ever After</p>
+        <ul>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </footer>
 </body>
 </html>
