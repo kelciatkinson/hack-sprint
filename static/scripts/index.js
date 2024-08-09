@@ -8,7 +8,7 @@ $( document ).ready(function() {
   $("#like").on('click', like);
 });
 
-$.getJSON("api/characterData.json", function(result) {
+$.getJSON("api/data.json", function(result) {
   configurationData = result.configuration;
   characterData = result.characters;
 

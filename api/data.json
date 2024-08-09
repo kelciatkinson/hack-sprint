@@ -2,6 +2,7 @@
   "characters": [
     {
       "name": "Snow White",
+      "shortName": "SnoWhite837",
       "age": 87,
       "height": "5'4",
       "job": "Baker",
@@ -13,6 +14,7 @@
     },
     {
       "name": "Wolf (AKA Big)",
+      "shortName": "BigWolf829",
       "age": 21,
       "height": "8'1",
       "job": "Demolition",
@@ -24,6 +26,7 @@
     },
     {
       "name": "Frog",
+      "shortName": "Jumper591",
       "age": 38,
       "height": "5in",
       "job": "Unemployed",
@@ -35,6 +38,7 @@
     },
     {
       "name": "Tinkerbell",
+      "shortName": "Tink83",
       "age": 20,
       "height": "6in",
       "job": "Royalty",
@@ -46,6 +50,7 @@
     },
     {
       "name": "Puss & Boots",
+      "shortName": "PBoots12",
       "age": 26,
       "height": "2'2",
       "job": "Swordsman",
@@ -57,6 +62,7 @@
     },
     {
       "name": "Queen of Hearts",
+      "shortName": "QHearts83",
       "age": 159,
       "height": "1'4",
       "job": "Royalty",
@@ -68,6 +74,7 @@
     },
     {
       "name": "Aladdin",
+      "shortName": "CarpetGuy96",
       "age": 18,
       "height": "6'3",
       "job": "Social Worker",
@@ -79,6 +86,7 @@
     },
     {
       "name": "Ursula",
+      "shortName": "UrLegs8",
       "age": 55,
       "height": "5'9",
       "job": "Royalty",
@@ -90,6 +98,7 @@
     },
     {
       "name": "Robin Hood",
+      "shortName": "DaTights",
       "age": 30,
       "height": "5'1",
       "job": "Philanthropist",
@@ -101,6 +110,7 @@
     },
     {
       "name": "Captain Hook",
+      "shortName": "CapnHook",
       "age": 120,
       "height": "6'",
       "job": "Captain",
@@ -111,5 +121,8 @@
       "image": "path/to/image"
     }
   ],
-  "configuration": "nothing"
+  "configuration": {
+    "characterImages": "static/images/",
+    "matchOdds": 0.35
+  }
 }
