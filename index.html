@@ -4,13 +4,14 @@
     <!-- head contains title, logo, fonts-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happily Ever After</title>
+    <title>Match Ever After</title>
     <link rel="stylesheet" href="static/styles/styles.css">
     <link rel="icon" href="../images/1-logo.png">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="static/scripts/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.2/jquery.modal.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
 </head>
 <body>
     <header>
@@ -50,6 +51,10 @@
                 <div class="stats">
                     <p id="characterAge"></p>
                     <p id="characterHeight"></p>
+                    <p id="characterJob"></p>
+                    <p id="characterAlcohol"></p>
+                    <p id="characterChildren"></p>
+                    <p id="characterLocation"></p>
                 </div>
             </div>
             <!-- ADD LINK TO CLICK TO LIKE PROFILE-->
@@ -60,8 +65,19 @@
         <div id="myModal" class="modal">
             <p>You're a match!</p>
             <div class="message-box">
+                <div id="characterImage" class="profile">
+                    <img src="static/images/profile-picture.jpg" class="profile-picture">
                 <input type="text" id="textbox" placeholder="Write them a message">
-                <button type="submit" id="submitbutton">-></button>
+                <button type="submit" id="submitbutton">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M5 12l14 0"></path>
+                        <path d="M13 18l6 -6"></path>
+                        <path d="M13 6l6 6"></path>
+            </svg>
+                </button>
             </div>
         </div>
     </main>
