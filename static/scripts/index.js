@@ -38,6 +38,10 @@ function updatePage(character) {
   $("#characterAge").text('Age: ' + character.age);
   $("#characterHeight").text('Height: ' + character.height);
   $("#characterBio").text(character.bio);
+  $("#characterJob").text('Job: ' + character.job);
+  $("#characterDrinks").text('Drinks Alcohol: ' + character.drinksAlcohol);
+  $("#characterChildren").text('Wants Children: ' + character.wantsChildren);
+  $("#characterLocation").text('Location: ' + character.location);
 }
 
 function dislike() {

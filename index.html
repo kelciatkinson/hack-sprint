@@ -21,7 +21,10 @@
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#messages">Messages</a></li>
-                <li><a href="#matches">Matches</a></li>
+                <li><a href="#matches" class="dropdown">Matches</a></li>
+                    <div class="dropdown-content">
+                      <p>Hello World!</p>
+                    </div> 
                 <li class="loggedin"><p>Logged in as:</p></li>
                 <li class="loggedin"><p id="username"></p></li>
                 <li><img src="static/images/profile-picture.jpg" class="user-picture"></li>
@@ -52,15 +55,12 @@
                     <p id="characterAge"></p>
                     <p id="characterHeight"></p>
                     <p id="characterJob"></p>
-                    <p id="characterAlcohol"></p>
+                    <p id="characterDrinks"></p>
                     <p id="characterChildren"></p>
                     <p id="characterLocation"></p>
                 </div>
             </div>
-            <!-- ADD LINK TO CLICK TO LIKE PROFILE-->
-            <!-- <a id="like" class="heart"> -->
                 <img id="like" class="heart" src="static/images/heart.png">
-            <!-- </a> -->
         </div>
         <div id="myModal" class="modal">
             <p>You're a match!</p>
