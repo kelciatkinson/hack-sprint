@@ -195,15 +195,12 @@ section p {
     height: 60%;
     background-color: white;
     opacity: 80%;
-    display: flex;
-    flex-direction: column;
 }
 
 .modal p {
     text-align: center;
     font-size: 3.5rem;
     margin: 20px;
-    flex-direction: column;
     font-family: Kitsch;
     font-style: italic;
     font-weight: 900;
@@ -214,14 +211,12 @@ section p {
     height: 50%;
     margin-bottom: 20px;
     margin-top: 5px;
-    flex-direction: column;
 }
 
 .message-box {
     width: 400px;
     max-width: 100%;
     position: relative;
-    flex-direction: column;
     margin-left: 3%;
 }
 
@@ -232,7 +227,6 @@ section p {
     padding: 1rem 2rem;
     width: 100%;
     color: black;
-    flex-direction: column;
 }
 
 .message-box button {
