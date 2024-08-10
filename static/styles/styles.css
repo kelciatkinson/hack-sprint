@@ -23,20 +23,21 @@
     src: url(../fonts/Autography.otf) format('opentype');
 }
 
-body {
+html {
     background: linear-gradient(to bottom, #280a50, #d3adff);
 }
 
 main {
     display: flex;
+    min-height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: Kitsch;
-    background: linear-gradient(to bottom, #280a50, #d3adff);
     line-height: 1.6;
     margin: 0;
     padding-top: 200px;
+
 }
 
 header {
@@ -44,7 +45,7 @@ header {
     color: #000;
     font-family: Kitsch;
     font-size: 1.5rem;
-    background-color: #280a50;
+    background-color: #2D0E54;
     display: flex;
     justify-content: space-between;
     align-items: center;
