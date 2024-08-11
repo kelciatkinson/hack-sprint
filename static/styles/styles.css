@@ -136,22 +136,22 @@ section p {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-color: #fff;
     border-radius: 10px;
-    height: 800;
-    width: 90%;
-    max-width: 33rem;
+    min-height: 800px;
+    max-width: 40rem;
     padding: 10px;
     box-sizing: border-box;
     margin: 250px auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    overflow: hidden;
 }
 
 .cross, .heart {
     position: absolute;
-    top: 50%;
+    top: 20%;
     cursor: pointer;
 }
 
@@ -181,11 +181,12 @@ section p {
 }
 
 .profile-picture {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    max-height: 300px;
     border-radius: 50%;
-    margin-bottom: 20px;
-    margin-top: 10px;
+    position: sticky;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .stats {
@@ -193,12 +194,13 @@ section p {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 433px;
+    font-family: 'Courier New', Courier, monospace;
     margin: 10px 10px 10px 10px;
+    max-width: 100%;
 }
 
 #characterName {
-    margin: 10px 0 5px;
+    margin: 50px 0 5px;
     text-align: center;
     color: #555;
     font-family: 'Courier New', Courier, monospace;
@@ -206,12 +208,9 @@ section p {
 
 #characterBio {
     color: #555;
-    margin-top: auto;
     margin: 10px;
-}
-
-.stats {
-    font-family: 'Courier New', Courier, monospace;
+    max-width: 100%;
+    margin-top: 34px;
 }
 
 #myModal {
@@ -235,7 +234,6 @@ section p {
     margin-bottom: 20px;
     margin-top: 5px;
 }
-
 
 .message-box {
     width: 400px;
