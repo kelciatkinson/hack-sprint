@@ -24,7 +24,7 @@ $.getJSON("api/data.json", function(result) {
   console.log("playing as " + characterData[0].name)
   let name = `<b>${characterData[0].shortName}</b>`;
   document.getElementById('username').innerHTML = name;
-  $('.user-picture').attr('src', `static/images/${characterData[0].image}`);
+  $('.user-picture').attr('src', `${configurationData.characterImages}${characterData[0].image}`);
 
   characterId = 1;
   updatePage(characterData[characterId]);
