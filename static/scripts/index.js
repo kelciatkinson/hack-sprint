@@ -34,6 +34,8 @@ function updatePage(character) {
   console.log(`showing character ${character.name}`);
   $("#characterName").text(character.name);
   $("#characterImage img").attr('src',
+    "static/images/loading.gif");
+  $("#characterImage img").attr('src',
     configurationData.characterImages + character.image);
   $("#characterAge").text('Age: ' + character.age);
   $("#characterHeight").text('Height: ' + character.height);
