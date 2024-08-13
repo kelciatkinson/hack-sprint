@@ -8,8 +8,14 @@ import {
 
 const host = '0.0.0.0';
 const port = 8080;
-
-const requestListener = async function (req, res) {
+const secret = readFromFile('secret.txt'); 
+const AWS_config = {
+  region: 'us-east-1',
+  credentials: { accessKeyId: 'AKIAW6X74OAGRZSG3O3N',
+  secretAccessKey: secret }
+ };
+ 
+ const requestListener = async function (req, res) {
   //  res.writeHead(200);
   //  const data = await getData("","The user says 'hello'");
   //  res.end(data);
@@ -37,11 +43,7 @@ server.listen(port, host, () => {
 
 
 async function getData(characterName, characterBio, userMessage) {
-  const AWS_config = {
-   region: 'us-east-1',
-   credentials: { accessKeyId: 'AKIAW6X74OAGRZSG3O3N',
-   secretAccessKey: '' }
-  };
+
   const client = new BedrockRuntimeClient(AWS_config);
   const modelId = "anthropic.claude-3-haiku-20240307-v1:0";
   const conversation = [
