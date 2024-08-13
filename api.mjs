@@ -32,7 +32,7 @@ const AWS_config = {
 
     });
 } else {
-    res.end(readFromFile('api/data.json'));
+    res.end(readFromFile('data.json'));
 }
 };
 
