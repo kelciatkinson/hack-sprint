@@ -127,6 +127,10 @@ section {
     font-size: 4rem;
 }
 
+section:hover {
+    cursor: default;
+}
+
 section p {
     font-family: Autography;
     font-size: 3.5rem;
@@ -297,11 +301,11 @@ footer {
     display: flex;
     background-color: #2D0E54;
     color: #fff;
-    padding: 20px;
     text-align: center;
     align-items: center;
     justify-content: center;
     padding-top: 40px;
+    padding-bottom: 20px;
     width: 100%;
 }
 
@@ -309,20 +313,19 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-
 }
 
 .footer-container p {
-    margin: 0;
     font-family: Kitsch;
     font-size: 1rem;
 }
 
 .footer-links {
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .footer-links, .footer-social {
@@ -333,8 +336,12 @@ footer {
     margin: 10px;
 }
 
+.footer-links a:hover, .footer-social a:hover {
+    color: #FA5252;
+}
+
 .footer-social {
-    margin-left: 10%;
+    flex-direction: row;
 }
 .footer-links li, .footer-social li {
     display: inline;
@@ -378,7 +385,6 @@ footer {
         align-items: center;
     }
     .footer-links {
-        margin-top: 20px;
         flex-direction: row;
     }
 }
