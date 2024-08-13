@@ -55,10 +55,11 @@ const requestListener = async function (req, res) {
             });
             res.end("PULL");
             return;
+        } else {
+          res.writeHead(200);
+          res.end(readFromFile('data.json'));
+          return;
         }
-        res.writeHead(200);
-        res.end(readFromFile('data.json'));
-        return;
     }
 };
 
