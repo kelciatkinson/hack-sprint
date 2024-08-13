@@ -39,7 +39,7 @@ const requestListener = async function (req, res) {
         res.end(JSON.stringify({characterResponse}));
       });
     } else {
-      if ((req.method == 'GET') && (req.query != undefined))
+      if ((req.method == 'GET') && (req.query != undefined)) {
         if (req.query.pull != undefined) {
           res.end("pull would happen here");
         }
