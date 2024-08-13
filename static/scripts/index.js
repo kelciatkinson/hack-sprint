@@ -37,15 +37,16 @@ function updatePage(character) {
     "static/images/loading.gif");
   $("#characterImage img").attr('src',
     configurationData.characterImages + character.image);
-  $("#characterAge").text('&nbsp;&nbsp;Age:&nbsp;' + character.age);
-  $("#characterHeight").text('&nbsp;&nbsp;Height:&nbsp;' + character.height);
-  $("#characterBio").text(character.bio);
-  $("#characterJob").text('&nbsp;&nbsp;Job:&nbsp;' + character.job);
-  $("#characterDrinks").text('&nbsp;&nbsp;Drinks&nbsp;Alcohol:&nbsp;' +
+  $("#characterAge").innerHTML('&nbsp;&nbsp;Age:&nbsp;' + character.age);
+  $("#characterHeight").innerHTML('&nbsp;&nbsp;Height:&nbsp;' +
+    character.height);
+  $("#characterBio").innerHTML(character.bio);
+  $("#characterJob").innerHTML('&nbsp;&nbsp;Job:&nbsp;' + character.job);
+  $("#characterDrinks").innerHTML('&nbsp;&nbsp;Drinks&nbsp;Alcohol:&nbsp;' +
     character.drinksAlcohol);
-  $("#characterChildren").text('&nbsp;&nbsp;Wants&nbsp;Children:&nbsp;' +
+  $("#characterChildren").innerHTML('&nbsp;&nbsp;Wants&nbsp;Children:&nbsp;' +
     character.wantsChildren);
-  $("#characterLocation").text('&nbsp;&nbsp;Location:&nbsp;' +
+  $("#characterLocation").innerHTML('&nbsp;&nbsp;Location:&nbsp;' +
     character.location);
 }
 
