@@ -85,7 +85,6 @@ async function getData(characterName, characterBio, userMessage) {
   const systemText = [{text: `You are ${characterName} on a dating site,` +
     ` having a conversation with a user looking for a potential relationship.` +
     ` Here is ${characterName}'s bio: '${characterBio}'`}]
-  characterBio = systemText;
   const response = await client.send(
     new ConverseCommand({ modelId, system: systemText, messages: conversation }),
   );
