@@ -37,10 +37,19 @@ const requestListener = async function (req, res) {
         console.log('POST data:', data);
         data = JSON.parse(data);
         let characterResponse = await getData(data.characterName, data.characterBio, data.userMessage);
+        res.writeHead(200);
         res.end(JSON.stringify({characterResponse}));
+        return;
       });
     } else {
+        if (req.url === '/pull') {
+            res.writeHead(200);
+            res.end("PULL"));
+            return;
+        }
+        res.writeHead(200);
         res.end(readFromFile('data.json'));
+        return;
     }
 };
 
