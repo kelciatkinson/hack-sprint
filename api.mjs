@@ -41,7 +41,7 @@ const requestListener = async function (req, res) {
     } else {
       if (req.method == 'GET') {
         //if (req.query.pull != undefined) {
-          res.end(JSON.stringify(req));
+          res.end(req.toString());
         //}
       } else {
         res.end(readFromFile('data.json'));
