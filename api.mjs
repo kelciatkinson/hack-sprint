@@ -44,6 +44,15 @@ const requestListener = async function (req, res) {
     } else {
         if (req.url === '/pull') {
             res.writeHead(200);
+            const { exec } = require('child_process');
+            var yourscript = exec('sudo /var/www/update.sh', 
+              ( error, stdout, stderr) => {
+                console.log(stdout);
+                console.log(stderr);
+                if (error !== null) {
+                   console.log(`exec error: ${error}`);
+                }
+            });
             res.end("PULL");
             return;
         }
