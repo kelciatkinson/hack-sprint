@@ -1,4 +1,4 @@
-#!/bin/node
+#!/usr/bin/node
 import fs from 'node:fs';
 import * as http from 'http';
 import {
