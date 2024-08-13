@@ -25,6 +25,10 @@ const credentials = {key: privateKey, cert: certificate};
 const util = require('util');
 
 const requestListener = async function (req, res) {
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'OPTIONS, POST, GET',
+    'Access-Control-Max-Age': 60 };
   //  res.writeHead(200);
   //  const data = await getData("","The user says 'hello'");
   //  res.end(data);
@@ -37,13 +41,13 @@ const requestListener = async function (req, res) {
         console.log('POST data:', data);
         data = JSON.parse(data);
         let characterResponse = await getData(data.characterName, data.characterBio, data.userMessage);
-        res.writeHead(200);
+        res.writeHead(200, headers);
         res.end(JSON.stringify({characterResponse}));
         return;
       });
     } else {
         if (req.url === '/pull') {
-            res.writeHead(200);
+            res.writeHead(200, headers);
             const { exec } = require('child_process');
             var yourscript = exec('sudo /var/www/update.sh', 
               ( error, stdout, stderr) => {
@@ -56,7 +60,7 @@ const requestListener = async function (req, res) {
             res.end("PULL");
             return;
         } else {
-          res.writeHead(200);
+          res.writeHead(200, headers);
           res.end(readFromFile('data.json'));
           return;
         }
