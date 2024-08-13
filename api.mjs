@@ -33,11 +33,17 @@ const requestListener = async function (req, res) {
   //  const data = await getData("","The user says 'hello'");
   //  res.end(data);
   if (req.method === 'POST') {
-    let data = '';
-    req.on('data', chunk => {
+    if (req.url === '/pull') {
+      res.writeHead(200, headers);
+      pull();
+      res.end("PULL");
+      return;
+    } else {
+      let data = '';
+      req.on('data', chunk => {
         data += chunk.toString();
-    });
-    req.on('end', async () => {
+      });
+      req.on('end', async () => {
         console.log('POST data:', data);
         data = JSON.parse(data);
         let characterResponse = await getData(data.characterName, data.characterBio, data.userMessage);
@@ -45,26 +51,19 @@ const requestListener = async function (req, res) {
         res.end(JSON.stringify({characterResponse}));
         return;
       });
-    } else {
-        if (req.url === '/pull') {
-            res.writeHead(200, headers);
-            const { exec } = require('child_process');
-            var yourscript = exec('sudo /var/www/update.sh', 
-              ( error, stdout, stderr) => {
-                console.log(stdout);
-                console.log(stderr);
-                if (error !== null) {
-                   console.log(`exec error: ${error}`);
-                }
-            });
-            res.end("PULL");
-            return;
-        } else {
-          res.writeHead(200, headers);
-          res.end(readFromFile('data.json'));
-          return;
-        }
     }
+  } else {
+    if (req.url === '/pull') {
+        res.writeHead(200, headers);
+        pull();
+        res.end("PULL");
+        return;
+    } else {
+      res.writeHead(200, headers);
+      res.end(readFromFile('data.json'));
+      return;
+    }
+  }
 };
 
 const server = https.createServer(credentials, requestListener);
@@ -101,4 +100,16 @@ function readFromFile(filePath) {
     console.log(err);
     return ("error: " + err);
   }
+}
+
+function pull() {
+  const { exec } = require('child_process');
+  var yourscript = exec('sudo /var/www/update.sh', 
+    ( error, stdout, stderr) => {
+      console.log(stdout);
+      console.log(stderr);
+      if (error !== null) {
+         console.log(`exec error: ${error}`);
+      }
+  });
 }
