@@ -169,7 +169,6 @@ section p {
     width: 60px;
     height: 60px;
     margin-left: 530px;
-
 }
 
 .heart:hover {
@@ -194,13 +193,13 @@ section p {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    position: absolute;
     font-family: 'Courier New', Courier, monospace;
-    margin: 10px 10px 10px 10px;
+    margin: 10px 10px 0px 10px;
     max-width: 100%;
 }
 
 #characterName {
-    margin: 50px 0 5px;
     text-align: center;
     color: #555;
     font-family: 'Courier New', Courier, monospace;
