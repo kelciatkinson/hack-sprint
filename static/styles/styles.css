@@ -37,6 +37,8 @@ main {
     line-height: 1.6;
     margin: 0;
     padding-top: 80px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 header {
@@ -108,6 +110,7 @@ nav ul li p {
 .loggedin {
     font-family: Arial;
     font-size: 1.2rem;
+    white-space: nowrap;
 }
 
 .user-picture {
@@ -169,11 +172,22 @@ section p {
     width: 60px;
     height: 60px;
     margin-left: 530px;
-
 }
 
 .heart:hover {
     filter: brightness(80%);
+}
+
+@media screen and (max-width: 600px) {
+    .cross {
+        margin-right: 300px;
+        top: 15%;
+    }
+
+    .heart {
+        margin-left: 300px;
+        top: 15%;
+    }
 }
 
 .profile {
@@ -194,13 +208,13 @@ section p {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    position: absolute;
     font-family: 'Courier New', Courier, monospace;
-    margin: 10px 10px 10px 10px;
+    margin: 10px 10px 0px 10px;
     max-width: 100%;
 }
 
 #characterName {
-    margin: 50px 0 5px;
     text-align: center;
     color: #555;
     font-family: 'Courier New', Courier, monospace;
@@ -292,9 +306,16 @@ input:focus {
 
 footer {
     margin-top: auto;
+    display: flex;
     width: 100%;
     background-color: #333;
+    align-items: center;
+    justify-content: space-around;
     color: #fff;
     padding: 20px;
     text-align: left;
+}
+
+footer a {
+    color: white;
 }
