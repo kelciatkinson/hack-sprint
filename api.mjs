@@ -46,7 +46,7 @@ const requestListener = async function (req, res) {
 
 const server = https.createServer(credentials, requestListener);
 server.listen(port, host, () => {
-    console.log(`Server is now running on http://${host}:${port}`);
+    console.log(`Server is now running on https://${host}:${port}`);
 });
 
 
