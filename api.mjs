@@ -10,9 +10,24 @@ const host = '0.0.0.0';
 const port = 8080;
 
 const requestListener = async function (req, res) {
-    res.writeHead(200);
-    const data = await getData("","The user says 'hello'");
-    res.end(data);
+  //  res.writeHead(200);
+  //  const data = await getData("","The user says 'hello'");
+  //  res.end(data);
+  if (req.method === 'POST') {
+    let data = '';
+    req.on('data', chunk => {
+        data += chunk.toString();
+    });
+    req.on('end', async () => {
+        console.log('POST data:', data);
+        data = JSON.parse(data);
+        let characterResponse = await getData(data.characterName, data.characterBio, data.userMessage);
+        res.end(JSON.stringify({characterResponse}));
+
+    });
+} else {
+    res.end(readFromFile('api/data.json'));
+}
 };
 
 const server = http.createServer(requestListener);
@@ -21,7 +36,7 @@ server.listen(port, host, () => {
 });
 
 
-async function getData(characterBio, userMessage) {
+async function getData(characterName, characterBio, userMessage) {
   const AWS_config = {
    region: 'us-east-1',
    credentials: { accessKeyId: 'AKIAW6X74OAGRZSG3O3N',
@@ -35,7 +50,7 @@ async function getData(characterBio, userMessage) {
       content: [{ text: userMessage }],
     },
   ];
-  const systemText = [{text: "You are Ursula on a dating site, having a conversation with a user looking for a potential relationship. Here is Ursula's bio 'I'm Ursula. I'm a woman of my word, and you better be too. Lest there be grave consequences. Hehe. Only joking. I like to make waves, eat sushi, and be the most powerful individual in the room. I am a person who is rather sure of myself, so if you feel like you can handle that, feel free to swim into my dms. I hate family because of my own treating me most poorly. I hope you keep family low on your priority list too. I am assertive and assured, and need someone who is willing to let me be number one."}]
+  const systemText = [{text: `You are ${characterName} on a dating site, having a conversation with a user looking for a potential relationship. Here is ${characterName}'s bio: '${characterBio}'`}]
   characterBio = systemText;
   const response = await client.send(
     new ConverseCommand({ modelId, system: systemText, messages: conversation }),
@@ -47,7 +62,7 @@ async function getData(characterBio, userMessage) {
 
 function readFromFile(filePath) {
   try {
-    const data = fs.readFileSync('filePath', { encoding: 'utf8' });
+    const data = fs.readFileSync(filePath, { encoding: 'utf8' });
     return (data);
   } catch (err) {
     console.log(err);
