@@ -22,6 +22,7 @@ const AWS_config = {
 const privateKey = fs.readFileSync('private.key', 'utf8');
 const certificate = fs.readFileSync('certificate.crt', 'utf8');
 const credentials = {key: privateKey, cert: certificate};
+const util = require('util');
 
 const requestListener = async function (req, res) {
   //  res.writeHead(200);
