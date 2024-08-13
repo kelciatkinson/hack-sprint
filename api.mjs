@@ -44,7 +44,7 @@ const requestListener = async function (req, res) {
     } else {
         if (req.url === '/pull') {
             res.writeHead(200);
-            res.end("PULL"));
+            res.end("PULL");
             return;
         }
         res.writeHead(200);
