@@ -1,4 +1,8 @@
 #!/usr/bin/node
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
+const https = require('https');
 import fs from 'node:fs';
 import * as http from 'http';
 import {
@@ -6,16 +10,20 @@ import {
   ConverseCommand,
 } from "@aws-sdk/client-bedrock-runtime";
 
-const host = '127.0.0.1';
+const host = '0.0.0.0';
 const port = 8080;
 const secret = readFromFile('secret.txt'); 
 const AWS_config = {
   region: 'us-east-1',
   credentials: { accessKeyId: 'AKIAW6X74OAGRZSG3O3N',
   secretAccessKey: secret }
- };
- 
- const requestListener = async function (req, res) {
+};
+
+const privateKey = fs.readFileSync('private.key', 'utf8');
+const certificate = fs.readFileSync('certificate.crt', 'utf8');
+const credentials = {key: privateKey, cert: certificate};
+
+const requestListener = async function (req, res) {
   //  res.writeHead(200);
   //  const data = await getData("","The user says 'hello'");
   //  res.end(data);
@@ -29,14 +37,13 @@ const AWS_config = {
         data = JSON.parse(data);
         let characterResponse = await getData(data.characterName, data.characterBio, data.userMessage);
         res.end(JSON.stringify({characterResponse}));
-
-    });
-} else {
-    res.end(readFromFile('data.json'));
-}
+      });
+    } else {
+      res.end(readFromFile('data.json'));
+    }
 };
 
-const server = http.createServer(requestListener);
+const server = https.createServer(credentials, requestListener);
 server.listen(port, host, () => {
     console.log(`Server is running on http://${host}:${port}`);
 });
