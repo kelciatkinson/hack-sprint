@@ -6,7 +6,7 @@ import {
   ConverseCommand,
 } from "@aws-sdk/client-bedrock-runtime";
 
-const host = '0.0.0.0';
+const host = '127.0.0.1';
 const port = 8080;
 const secret = readFromFile('secret.txt'); 
 const AWS_config = {

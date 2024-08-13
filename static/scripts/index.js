@@ -8,7 +8,7 @@ $( document ).ready(function() {
   $("#like").on('click', like);
 });
 
-$.getJSON("http://matcheverafter.com:8080/api/data.json", function(result) {
+$.getJSON("https://matcheverafter.com/api/data.json", function(result) {
   configurationData = result.configuration;
   characterData = result.characters;
 
