@@ -301,7 +301,7 @@ footer {
     text-align: center;
     align-items: center;
     justify-content: center;
-    margin-top: auto;
+    padding-top: 40px;
     width: 100%;
 }
 
@@ -309,9 +309,10 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+
 }
 
 .footer-container p {
@@ -332,6 +333,9 @@ footer {
     margin: 10px;
 }
 
+.footer-social {
+    margin-left: 10%;
+}
 .footer-links li, .footer-social li {
     display: inline;
 }
