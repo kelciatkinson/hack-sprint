@@ -37,13 +37,16 @@ function updatePage(character) {
     "static/images/loading.gif");
   $("#characterImage img").attr('src',
     configurationData.characterImages + character.image);
-  $("#characterAge").text('Age: ' + character.age);
-  $("#characterHeight").text('Height: ' + character.height);
+  $("#characterAge").text('&nbsp;&nbsp;Age:&nbsp;' + character.age);
+  $("#characterHeight").text('&nbsp;&nbsp;Height:&nbsp;' + character.height);
   $("#characterBio").text(character.bio);
-  $("#characterJob").text('Job: ' + character.job);
-  $("#characterDrinks").text('Drinks Alcohol: ' + character.drinksAlcohol);
-  $("#characterChildren").text('Wants Children: ' + character.wantsChildren);
-  $("#characterLocation").text('Location: ' + character.location);
+  $("#characterJob").text('&nbsp;&nbsp;Job:&nbsp;' + character.job);
+  $("#characterDrinks").text('&nbsp;&nbsp;Drinks&nbsp;Alcohol:&nbsp;' +
+    character.drinksAlcohol);
+  $("#characterChildren").text('&nbsp;&nbsp;Wants&nbsp;Children:&nbsp;' +
+    character.wantsChildren);
+  $("#characterLocation").text('&nbsp;&nbsp;Location:&nbsp;' +
+    character.location);
 }
 
 function dislike() {
