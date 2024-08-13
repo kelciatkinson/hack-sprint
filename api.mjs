@@ -39,9 +39,9 @@ const requestListener = async function (req, res) {
         res.end(JSON.stringify({characterResponse}));
       });
     } else {
-      if ((req.method == 'GET') && (req.query != undefined)) {
+      if ((req.method == 'GET') {
         //if (req.query.pull != undefined) {
-          res.end(req.query);
+          res.end(JSON.stringify(req));
         //}
       } else {
         res.end(readFromFile('data.json'));
