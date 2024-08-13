@@ -77,6 +77,7 @@ header {
 .logo {
     width: 60px;
     height: 50px;
+    max-width: 100%;
     background-image: url('../images/1-logo.png');
     background-size: cover;
     margin-left: 10px;
@@ -178,18 +179,6 @@ section p {
     filter: brightness(80%);
 }
 
-@media screen and (max-width: 600px) {
-    .cross {
-        margin-right: 300px;
-        top: 15%;
-    }
-
-    .heart {
-        margin-left: 300px;
-        top: 15%;
-    }
-}
-
 .profile {
     text-align: center;
 }
@@ -285,7 +274,7 @@ section p {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-button{
+button {
     border: none;
     cursor: pointer;
 }
@@ -305,17 +294,87 @@ input:focus {
 }
 
 footer {
-    margin-top: auto;
     display: flex;
-    width: 100%;
-    background-color: #333;
-    align-items: center;
-    justify-content: space-around;
+    background-color: #2D0E54;
     color: #fff;
     padding: 20px;
-    text-align: left;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    width: 100%;
 }
 
-footer a {
-    color: white;
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-container p {
+    margin: 0;
+    font-family: Kitsch;
+    font-size: 1rem;
+}
+
+.footer-links {
+    flex-direction: column;
+}
+
+.footer-links, .footer-social {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.footer-links li, .footer-social li {
+    display: inline;
+}
+
+.footer-links a, .footer-social a {
+    color: #fff;
+    text-decoration: none;
+    font-family: Kitsch;
+    font-size: 1rem;
+}
+
+.footer-social img {
+    height: 24px;
+    width: 24px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.footer-container copy {
+    font-family: Kitsch;
+}
+.footer-container .copywrite {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+@media screen and (max-width: 600px) {
+    .cross {
+        margin-right: 300px;
+        top: 15%;
+    }
+
+    .heart {
+        margin-left: 300px;
+        top: 15%;
+    }
+    
+    .footer-container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-links {
+        margin-top: 20px;
+        flex-direction: row;
+    }
 }
