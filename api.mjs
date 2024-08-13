@@ -44,7 +44,7 @@ const requestListener = async function (req, res) {
         //if (req.query.pull != undefined) {
           const jsonString = util.inspect(req);
           console.log(jsonString);
-          res.end(jsonString);
+          res.end("OUTPUT" + jsonString);
         //}
       } else {
         res.end(readFromFile('data.json'));
