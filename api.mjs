@@ -39,7 +39,11 @@ const requestListener = async function (req, res) {
         res.end(JSON.stringify({characterResponse}));
       });
     } else {
-      res.end(readFromFile('data.json'));
+      if ((req.method == 'GET') && (req.query.pull)) {
+        res.end("pull would happen here");
+      } else {
+        res.end(readFromFile('data.json'));
+      }
     }
 };
 
