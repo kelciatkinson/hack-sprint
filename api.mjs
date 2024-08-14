@@ -12,7 +12,7 @@ import {
 
 const host = '0.0.0.0';
 const port = 8080;
-const secret = readFromFile('secret.txt').replace("/n",""); 
+const secret = readFromFile('secret.txt').replace("\n",""); 
 const AWS_config = {
   region: 'us-east-1',
   credentials: { accessKeyId: 'AKIAW6X74OAGRZSG3O3N',
