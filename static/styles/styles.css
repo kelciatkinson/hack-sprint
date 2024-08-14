@@ -240,9 +240,14 @@ section p {
 }
 
 #myModal {
-    height: 60%;
+    height: 60vh;
     background-color: white;
     opacity: 80%;
+    overflow: scroll;
+}
+
+.close-modal {
+    margin: 30px;
 }
 
 .modal p {
