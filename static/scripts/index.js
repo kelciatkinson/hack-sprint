@@ -158,8 +158,8 @@ function sendChat(){
 
 var speed = 10;
 setInterval(() => {
-  speed = Math.floor(Math.random() * 61) + 10;
-}, 100);
+  speed = Math.floor(Math.random() * 61) + 5;
+}, 50);
 
 function typeWriter(id, txt, i) {
   if (i < txt.length) {
