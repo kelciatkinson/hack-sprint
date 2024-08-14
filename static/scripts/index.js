@@ -6,6 +6,15 @@ $( document ).ready(function() {
   console.log( "ready!" );
   $("#dislike").on('click', dislike);
   $("#like").on('click', like);
+  $("#chatTextbox").on('keypress', function(event) {
+    // If the user presses the "Enter" key
+    if (event.key === "Enter") {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Call your custom function here
+        sendChat();
+    }
+  });
 });
 
 $.getJSON("https://matcheverafter.com:8080/", function(result) {
