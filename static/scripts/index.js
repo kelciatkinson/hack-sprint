@@ -113,7 +113,7 @@ function shuffle(array) {
 }
 
 function sendChat(){
-  $("#characterImage").remove();
+  $("#chatCharacterImage").remove();
   const userMessage = $("#textbox").val();
   
   var newDiv = document.createElement("div");
