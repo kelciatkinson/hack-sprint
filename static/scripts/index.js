@@ -161,6 +161,6 @@ function typeWriter(id, txt, i) {
   if (i < txt.length) {
     document.getElementById(id).innerHTML += txt.charAt(i);
     i++;
-    setTimeout((id, txt, i) => { typeWriter(id, txt, i); } , speed);
+    setTimeout(typeWriter, speed, id, txt, i);
   }
 }
