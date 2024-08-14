@@ -139,6 +139,10 @@ function sendChat(){
   const url = "https://matcheverafter.com:8080/";
 
   $.post(url, POST_data, function(data, textStatus) {
+    let response = data.characterResponse;
+    // remove any text between * characters:
+    response = response.replace(/\*[^*]*\*/g, "");
+
     document.getElementById('chat').innerHTML = p + 'You: ' + userMessage +
     '<br><br>' + characterData[characterId].name + ':' +
     data.characterResponse + '</p>';
