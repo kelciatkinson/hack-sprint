@@ -157,6 +157,10 @@ function sendChat(){
 }
 
 var speed = 10;
+setInterval(() => {
+  speed = Math.floor(Math.random() * 61) + 10;
+}, 100);
+
 function typeWriter(id, txt, i) {
   if (i < txt.length) {
     document.getElementById(id).innerHTML += txt.charAt(i);
