@@ -53,7 +53,7 @@ const requestListener = async function (req, res) {
 
         res.writeHead(200, headers);
         res.end(JSON.stringify({characterResponse}));
-        characterResponse = await getData(data.characterName, data.characterBio, data.userMessage);
+
         console.log("characterResponse: " + characterResponse);
         return;
       });
@@ -87,7 +87,7 @@ async function getData(characterName, characterBio, userMessage) {
     `relationship. Here is ${characterName}'s bio: '${characterBio}'`}];
   try {
     const command = new ConverseCommand({ modelId, system: systemText, messages: conversation });
-    const response = await client.send(command);
+    let response = await client.send(command);
     const responseText = response.output.message.content[0].text;
     return responseText;
   } catch (err) {
