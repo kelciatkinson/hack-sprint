@@ -109,7 +109,7 @@ function readFromFile(filePath) {
 
 function pull() {
   const { exec } = require('child_process');
-  var yourscript = exec('sudo /var/www/update.sh', 
+  var yourscript = exec('cd /var/www/hack-sprint/ && git pull', 
     ( error, stdout, stderr) => {
       console.log(stdout);
       console.log(stderr);
