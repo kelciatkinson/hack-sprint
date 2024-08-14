@@ -204,4 +204,13 @@ function resetModal() {
       </button>
   </div>`
   document.getElementById('myModal').innerHTML = text;
+  $("#chatTextbox").on('keypress', function(event) {
+    // If the user presses the "Enter" key
+    if (event.key === "Enter") {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Call your custom function here
+        sendChat();
+    }
+  });
 }
