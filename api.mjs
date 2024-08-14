@@ -83,9 +83,7 @@ async function getData(characterName, characterBio, userMessage) {
       content: [{ text: userMessage }],
     },
   ];
-  const systemText = [{text: `You are ${characterName} on a dating site,` +
-    ` having a conversation with a user looking for a potential relationship.` +
-    ` Here is ${characterName}'s bio: '${characterBio}'`}]
+  const systemText = [{text: `You are ${characterName} on a dating site, having a conversation with a user looking for a potential relationship. Here is ${characterName}'s bio: '${characterBio}'`}]
   const response = await client.send(
     new ConverseCommand({ modelId, system: systemText, messages: conversation }),
   );
@@ -98,7 +96,7 @@ async function getData(characterName, characterBio, userMessage) {
   console.log("responseOutputMessageContent: " + responseOutputMessageContent.toString());
   const responseOutputMessageContentText = responseOutputMessageContent[0].text;
   console.log("responseOutputMessageContentText: " + responseOutputMessageContentText.toString());
-  
+
 
   const responseText = response.output.message.content[0].text;
   return responseText;
