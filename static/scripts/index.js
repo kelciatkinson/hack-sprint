@@ -136,7 +136,7 @@ function sendChat(){
   const url = "https://matcheverafter.com:8080/";
 
   $.post(url, POST_data, function(data, textStatus) {
-    document.getElementById('chat').innerHTML = '<p>' + data.characterResponse + '</p>';
+    document.getElementById('chat').innerHTML = '<p style="font-family: Times; font-size: 14pt;">You: ' + userMessage + '<br><br>' + characterData[characterId].name + ':' + data.characterResponse + '</p>';
     $('button').attr('onclick', 'sendChat()');
   }, "json");
 }
