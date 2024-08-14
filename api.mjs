@@ -50,6 +50,8 @@ const requestListener = async function (req, res) {
         let characterResponse = "I'd love to chat with you... maybe another time!";
         res.writeHead(200, headers);
         res.end(JSON.stringify({characterResponse}));
+        characterResponse = await getData(data.characterName, data.characterBio, data.userMessage);
+        console.log("characterResponse: " + characterResponse);
         return;
       });
     }
@@ -74,34 +76,23 @@ server.listen(port, host, () => {
 
 
 async function getData(characterName, characterBio, userMessage) {
-
-  console.log(AWS_config);
   const client = new BedrockRuntimeClient(AWS_config);
   const modelId = "anthropic.claude-3-haiku-20240307-v1:0";
-  const conversation = [
-    {
+  const conversation = [{
       role: "user",
-      content: [{ text: userMessage }],
-    },
-  ];
+      content: [{ text: userMessage }]
+    }];
   let systemText = [{text: `You are ${characterName} on a dating site, having a conversation with a user looking for a potential relationship. Here is ${characterName}'s bio: '${characterBio}'`}]
   systemText = [{text: "Your name is Alladin. You're a nice guy!"}];
-  const response = await client.send(
-    new ConverseCommand({ modelId, system: systemText, messages: conversation }),
-  );
-
-  const responseOutput = response.output;
-  console.log("responseOutput: " + responseOutput.toString());
-  const responseOutputMessage = responseOutput.message;
-  console.log("responseOutputMessage: " + responseOutputMessage.toString());
-  const responseOutputMessageContent = responseOutputMessage.content;
-  console.log("responseOutputMessageContent: " + responseOutputMessageContent.toString());
-  const responseOutputMessageContentText = responseOutputMessageContent[0].text;
-  console.log("responseOutputMessageContentText: " + responseOutputMessageContentText.toString());
-
-
-  const responseText = response.output.message.content[0].text;
-  return responseText;
+  try {
+    const command = new ConverseCommand({ modelId, system: systemText, messages: conversation });
+    const response = await client.send(command);
+    const responseText = response.output.message.content[0].text;
+    return responseText;
+  } catch (err) {
+    console.log(err);
+    return ("error: " + err);
+  }
 }
 
 function readFromFile(filePath) {
