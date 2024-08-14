@@ -120,6 +120,6 @@ function sendChat(){
   const url = "https://matcheverafter.com:8080/";
 
   $.post(url, POST_data, function(data, textStatus) {
-    alert(data);
+    alert(data.characterResponse);
   }, "json");
 }
