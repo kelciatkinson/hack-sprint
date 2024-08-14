@@ -77,6 +77,7 @@ function like() {
       $('#myModal').modal('show');
       var observer = new MutationObserver( () => {
         showNext();
+        resetModal();
         observer.disconnect();
         });
       observer.observe(document.getElementById('myModal'),
@@ -166,4 +167,28 @@ function typeWriter(id, txt, i) {
 
 function getPosition(string, subString, index) {
   return string.split(subString, index).join(subString).length;
+}
+
+function resetModal() {
+  const text = `<p>You're a match!</p>
+  <div class="message-box">
+      <div id="chatCharacterImage" class="profile">
+          <img src="static/images/loading.gif" class="profile-picture">
+      </div>
+      <div id="chatTextboxDiv" class="profile">
+        <input type="text" id="chatTextbox" placeholder="Write them a message">
+      </div>
+      <button type="submit" id="submitbutton" onclick="sendChat();">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+              fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M5 12l14 0"></path>
+              <path d="M13 18l6 -6"></path>
+              <path d="M13 6l6 6"></path>
+          </svg>
+      </button>
+  </div>`
+  document.getElementById('myModal').innerHTML = text;
 }
