@@ -119,7 +119,7 @@ function sendChat(){
   var newDiv = document.createElement("div");
   newDiv.id = "chat";
   newDiv.innerHTML = userMessage;
-  document.getElementById("myModalBody").appendChild(newDiv);
+  document.getElementById('myModal').appendChild(newDiv);
 
   // remove onclick from button element
   $('button').attr('onclick', '');
