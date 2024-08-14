@@ -137,8 +137,8 @@ function sendChat(){
   const url = "https://matcheverafter.com:8080/";
 
   $.post(url, POST_data, function(data, textStatus) {
-    document.getElementById('chat').innerHTML = '<p style="text-align: left; font-decoration: none; font-family: Times; font-size: 14pt;">You: ' + userMessage + '<br><br>' + characterData[characterId].name + ':' + data.characterResponse + '</p>';
+    document.getElementById('chat').innerHTML = '<p style="text-align: left; font-style: normal; font-family: Times; font-size: 14pt;">You: ' + userMessage + '<br><br>' + characterData[characterId].name + ':' + data.characterResponse + '</p>';
     // add the chatTextboxDiv and submitbutton back to the modal dialog:
-    document.getElementById('myModal').innerHTML += chatTextboxDiv + submitbutton;
+    document.getElementsByClassName('message-box')[0].innerHTML += chatTextboxDiv + submitbutton;
   }, "json");
 }
