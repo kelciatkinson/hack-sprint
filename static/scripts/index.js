@@ -117,13 +117,13 @@ function shuffle(array) {
 
 function sendChat(){
   const p = '<p style="text-align: left; font-weight: normal; font-style: ' +
-    'normal; font-family: Times; font-size: 14pt;">';
+    'normal; font-family: Times; font-size: 14pt;"';
   $("#chatCharacterImage").remove();
   const userMessage = $("#chatTextbox").val();
 
   var newDiv = document.createElement("div");
   newDiv.id = "chat";
-  newDiv.innerHTML = p + 'You: ' + userMessage + '</p>';
+  newDiv.innerHTML = p + '>You: ' + userMessage + '</p>';
   document.getElementById('myModal').appendChild(newDiv);
 
   const chatTextboxDiv = document.getElementById('chatTextboxDiv').outerHTML;
@@ -143,12 +143,11 @@ function sendChat(){
     // remove any text between * characters:
     response = response.replace(/\*[^*]*\*/g, "");
 
-    const stringToType = p + 'You: ' + userMessage +
-    '</p>' + p + characterData[characterId].name + ':' +
-    response + '</p>';
-    const startTypingAt = getPosition(stringToType, ':', 2)
-    document.getElementById('chat').innerHTML = stringToType.substring(0, startTypingAt)
-    typeWriter('chat', stringToType, startTypingAt);
+    document.getElementById('chat').innerHTML = p + '>You: ' + userMessage +
+    '</p>' + p + ' id="characterResponse">' + characterData[characterId].name +
+    ': </p>';
+    //document.getElementById('chat').innerHTML = stringToType.substring(0, startTypingAt)
+    typeWriter('characterResponse', response, 0);
     
 
     // add the chatTextboxDiv and submitbutton back to the modal dialog:
@@ -156,7 +155,7 @@ function sendChat(){
   }, "json");
 }
 
-var speed = 50;
+var speed = 10;
 function typeWriter(id, txt, i) {
   if (i < txt.length) {
     document.getElementById(id).innerHTML += txt.charAt(i);
