@@ -112,5 +112,6 @@ function shuffle(array) {
 }
 
 function sendChat(){
-  alert('send');
+  const userMessage = $("#textbox").value;
+  alert(userMessage);
 }
