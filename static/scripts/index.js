@@ -114,7 +114,7 @@ function shuffle(array) {
 
 function sendChat(){
   $("#chatCharacterImage").remove();
-  const userMessage = $("#textbox").val();
+  const userMessage = $("#chatTextbox").val();
   
   var newDiv = document.createElement("div");
   newDiv.id = "chat";
