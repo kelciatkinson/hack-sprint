@@ -74,6 +74,7 @@ server.listen(port, host, () => {
 
 async function getData(characterName, characterBio, userMessage) {
 
+  console.log(AWS_config);
   const client = new BedrockRuntimeClient(AWS_config);
   const modelId = "anthropic.claude-3-haiku-20240307-v1:0";
   const conversation = [
