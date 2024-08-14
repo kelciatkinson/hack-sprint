@@ -117,7 +117,7 @@ function sendChat(){
   const POST_data = {"characterBio": characterData[characterId].bio,
     "characterName": characterData[characterId].name,
     userMessage};
-  const url = "htpps://matcheverafter.com:8080/";
+  const url = "https://matcheverafter.com:8080/";
 
   $.post(url, POST_data, function(data, textStatus) {
     alert(data);
