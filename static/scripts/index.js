@@ -113,13 +113,26 @@ function shuffle(array) {
 }
 
 function sendChat(){
+  $("#characterImage").remove();
   const userMessage = $("#textbox").val();
+  
+  var newDiv = document.createElement("div");
+  newDiv.id = "chat";
+  newDiv.innerHTML = userMessage;
+  document.getElementById("myModalBody").appendChild(newDiv);
+
+  // remove onclick from button element
+  $('button').attr('onclick', '');
+  $('#textbox').val('');
+
   const POST_data = JSON.stringify({"characterBio": characterData[characterId].bio,
     "characterName": characterData[characterId].name,
     userMessage});
   const url = "https://matcheverafter.com:8080/";
 
   $.post(url, POST_data, function(data, textStatus) {
-    alert(data.characterResponse);
+    $('#chat').innerHTML('<p>' + userMessage + '</p>' +
+      '<p>' + data.characterResponse + '</p>');
+    $('button').attr('onclick', 'sendChat()');
   }, "json");
 }
