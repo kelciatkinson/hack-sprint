@@ -202,6 +202,8 @@ section p {
     flex-wrap: wrap;
     justify-content: space-around;
     position: absolute;
+    bottom: 0;
+    padding-bottom: 20px;
     font-family: 'Courier New', Courier, monospace;
     margin: 10px 10px 0px 10px;
     max-width: 100%;
@@ -384,7 +386,12 @@ footer {
         justify-content: center;
         align-items: center;
     }
+
     .footer-links {
         flex-direction: row;
+    }
+
+    .profile-picture {
+        max-width: 200px;
     }
 }
