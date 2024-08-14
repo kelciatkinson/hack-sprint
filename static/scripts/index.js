@@ -117,7 +117,7 @@ function shuffle(array) {
 
 function sendChat(){
   const p = '<p style="text-align: left; font-weight: normal; font-style: ' +
-    'normal; font-family: Times; font-size: 14pt;"></p>';
+    'normal; font-family: Times; font-size: 14pt;">';
   $("#chatCharacterImage").remove();
   const userMessage = $("#chatTextbox").val();
 
@@ -144,9 +144,9 @@ function sendChat(){
     response = response.replace(/\*[^*]*\*/g, "");
 
     const stringToType = p + 'You: ' + userMessage +
-    '<br><br>' + characterData[characterId].name + ':' +
+    '</p>' + p + characterData[characterId].name + ':' +
     response + '</p>';
-    const startTypingAt = userMessage.length + characterData[characterId].name.length + 14;
+    const startTypingAt = getPosition(stringToType, ':', 2)
     document.getElementById('chat').innerHTML = stringToType.substring(0, startTypingAt)
     typeWriter('chat', stringToType, startTypingAt);
     
@@ -163,4 +163,8 @@ function typeWriter(id, txt, i) {
     i++;
     setTimeout(typeWriter, speed, id, txt, i);
   }
+}
+
+function getPosition(string, subString, index) {
+  return string.split(subString, index).join(subString).length;
 }
