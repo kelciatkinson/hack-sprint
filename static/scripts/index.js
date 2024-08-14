@@ -90,6 +90,7 @@ function showNext() {
 
   updatePage(characterData[characterId]);
 }
+
 function shuffle(array) {
   var currentIndex = array.length;
   var temporaryValue;
@@ -113,5 +114,12 @@ function shuffle(array) {
 
 function sendChat(){
   const userMessage = $("#textbox").val();
-  alert(userMessage);
+  const POST_data = {"characterBio": characterData[characterId].bio,
+    "characterName": characterData[characterId].name,
+    userMessage};
+  const url = "htpps://matcheverafter.com:8080/";
+
+  $.post(url, POST_data, function(data, textStatus) {
+    alert(data);
+  }, "json");
 }
