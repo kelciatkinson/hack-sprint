@@ -114,9 +114,9 @@ function shuffle(array) {
 
 function sendChat(){
   const userMessage = $("#textbox").val();
-  const POST_data = {"characterBio": characterData[characterId].bio,
+  const POST_data = JSON.stringify({"characterBio": characterData[characterId].bio,
     "characterName": characterData[characterId].name,
-    userMessage};
+    userMessage});
   const url = "https://matcheverafter.com:8080/";
 
   $.post(url, POST_data, function(data, textStatus) {
