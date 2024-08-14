@@ -110,3 +110,7 @@ function shuffle(array) {
 
   return array;
 }
+
+function sendChat(){
+  alert('send');
+}
