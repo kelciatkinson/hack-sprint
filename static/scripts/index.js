@@ -124,9 +124,10 @@ function sendChat(){
   newDiv.innerHTML = userMessage;
   document.getElementById('myModal').appendChild(newDiv);
 
-  // remove onclick from button element
-  //$('button').attr('onclick', '');
-  //$('#textbox').val('');
+  const chatTextboxDiv = document.getElementById('chatTextboxDiv').outerHTML;
+  const submitbutton = document.getElementById('submitbutton').outerHTML;
+  $("#chatTextboxDiv").remove();
+  $("#submitbutton").remove();
 
   const POST_data = JSON.stringify({
     "characterBio": characterData[characterId].bio,
@@ -136,7 +137,8 @@ function sendChat(){
   const url = "https://matcheverafter.com:8080/";
 
   $.post(url, POST_data, function(data, textStatus) {
-    document.getElementById('chat').innerHTML = '<p style="font-family: Times; font-size: 14pt;">You: ' + userMessage + '<br><br>' + characterData[characterId].name + ':' + data.characterResponse + '</p>';
-    $('button').attr('onclick', 'sendChat()');
+    document.getElementById('chat').innerHTML = '<p style="text-align: left; font-decoration: none; font-family: Times; font-size: 14pt;">You: ' + userMessage + '<br><br>' + characterData[characterId].name + ':' + data.characterResponse + '</p>';
+    // add the chatTextboxDiv and submitbutton back to the modal dialog:
+    document.getElementById('myModal').innerHTML += chatTextboxDiv + submitbutton;
   }, "json");
 }
