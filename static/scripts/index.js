@@ -145,7 +145,7 @@ function sendChat(){
 
     document.getElementById('chat').innerHTML = p + 'You: ' + userMessage +
     '<br><br>' + characterData[characterId].name + ':' +
-    data.characterResponse + '</p>';
+    response + '</p>';
 
     // add the chatTextboxDiv and submitbutton back to the modal dialog:
     // document.getElementsByClassName('message-box')[0].innerHTML += chatTextboxDiv + submitbutton;
