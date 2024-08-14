@@ -24,7 +24,8 @@ $.getJSON("https://matcheverafter.com:8080/", function(result) {
   console.log("playing as " + characterData[0].name)
   let name = `<b>${characterData[0].shortName}</b>`;
   document.getElementById('username').innerHTML = name;
-  $('.user-picture').attr('src', `${configurationData.characterImages}${characterData[0].image}`);
+  $('.user-picture').attr('src',
+    `${configurationData.characterImages}${characterData[0].image}`);
 
   characterId = 1;
   updatePage(characterData[characterId]);
@@ -36,6 +37,8 @@ function updatePage(character) {
   $("#characterImage img").attr('src',
     "static/images/loading.gif");
   $("#characterImage img").attr('src',
+    configurationData.characterImages + character.image);
+  $("#chatCharacterImage img").attr('src',
     configurationData.characterImages + character.image);
   $("#characterAge").text(' Age: ' + character.age);
   $("#characterHeight").text(' Height: ' + character.height);
