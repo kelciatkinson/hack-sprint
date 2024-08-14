@@ -90,6 +90,16 @@ async function getData(characterName, characterBio, userMessage) {
     new ConverseCommand({ modelId, system: systemText, messages: conversation }),
   );
 
+  const responseOutput = response.output;
+  console.log("responseOutput: " + responseOutput.toString());
+  const responseOutputMessage = responseOutput.message;
+  console.log("responseOutputMessage: " + responseOutputMessage.toString());
+  const responseOutputMessageContent = responseOutputMessage.content;
+  console.log("responseOutputMessageContent: " + responseOutputMessageContent.toString());
+  const responseOutputMessageContentText = responseOutputMessageContent[0].text;
+  console.log("responseOutputMessageContentText: " + responseOutputMessageContentText.toString());
+  
+
   const responseText = response.output.message.content[0].text;
   return responseText;
 }
