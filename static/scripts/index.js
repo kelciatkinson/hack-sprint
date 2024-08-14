@@ -143,11 +143,24 @@ function sendChat(){
     // remove any text between * characters:
     response = response.replace(/\*[^*]*\*/g, "");
 
-    document.getElementById('chat').innerHTML = p + 'You: ' + userMessage +
+    const stringToType = p + 'You: ' + userMessage +
     '<br><br>' + characterData[characterId].name + ':' +
     response + '</p>';
+    const startTypingAt = userMessage.length + characterData[characterId].name.length + 14;
+    document.getElementById('chat').innerHTML = stringToType.substring(0, startTypingAt)
+    typeWriter('chat', stringToType, startTypingAt);
+    
 
     // add the chatTextboxDiv and submitbutton back to the modal dialog:
     // document.getElementsByClassName('message-box')[0].innerHTML += chatTextboxDiv + submitbutton;
   }, "json");
+}
+
+var speed = 50;
+function typeWriter(id, txt, i) {
+  if (i < txt.length) {
+    document.getElementById(id).innerHTML += txt.charAt(i);
+    i++;
+    setTimeout((id, txt, i) => { typeWriter(id, txt, i); } , speed);
+  }
 }
