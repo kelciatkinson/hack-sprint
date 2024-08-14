@@ -240,7 +240,7 @@ section p {
 }
 
 #myModal {
-    height: 60vh;
+    height: 90vh;
     background-color: white;
     opacity: 80%;
     overflow: scroll;
