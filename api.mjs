@@ -46,7 +46,8 @@ const requestListener = async function (req, res) {
       req.on('end', async () => {
         console.log('POST data:', data);
         data = JSON.parse(data);
-        let characterResponse = await getData(data.characterName, data.characterBio, data.userMessage);
+//        let characterResponse = await getData(data.characterName, data.characterBio, data.userMessage);
+        let characterResponse = "Text Response Here.";
         res.writeHead(200, headers);
         res.end(JSON.stringify({characterResponse}));
         return;
