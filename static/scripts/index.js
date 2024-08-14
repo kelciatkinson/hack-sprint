@@ -119,18 +119,23 @@ function sendChat(){
   $("#chatCharacterImage").remove();
   const userMessage = $("#chatTextbox").val();
   
+  console.log('1: ' + userMessage);
+
   var newDiv = document.createElement("div");
   newDiv.id = "chat";
   newDiv.innerHTML = userMessage;
   document.getElementById('myModal').appendChild(newDiv);
 
+  console.log('2: ' + userMessage);
+
   // remove onclick from button element
-  $('button').attr('onclick', '');
-  $('#textbox').val('');
+  //$('button').attr('onclick', '');
+  //$('#textbox').val('');
 
   const POST_data = JSON.stringify({"characterBio": characterData[characterId].bio,
     "characterName": characterData[characterId].name,
     userMessage});
+  console.log('3: ' + userMessage);
   const url = "https://matcheverafter.com:8080/";
 
   $.post(url, POST_data, function(data, textStatus) {
